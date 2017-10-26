@@ -2,7 +2,7 @@
 
 The intent of the program is to find midnight owls among [DEVMAN.org](https://devman.org) training course students. <br />
 
-Script connects to [DEVMAN](https://devman.org) server via API, retrieves and parses data and prints out list of student <br />
+Script connects to Devman server via [API](https://devman.org/api/challenges/solution_attempts/?page=1), retrieves and parses data and prints out list of student <br />
 who have sent their tasks for mentor's check in time interval 0:00 a.m - 6:00 a.m.
 
 Pavel Kadantsev, 2017. <br/>
