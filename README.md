@@ -17,7 +17,7 @@ It is recommended to use virtual environment.
 # Usage
 
 To execute the script use the following command in CLI: ```python seek_dev_nighters.py```. <br />
-CLI encoding changing may be required for correct script running on Windows platform: <br /> use ```chcp 65001``` for UTF-8 encoding.
+CLI encoding changing may be required for correct script running on Windows platform: for UTF-8 encoding use  <br /> ```chcp 65001```
 
 # Example of Script Launch
 
