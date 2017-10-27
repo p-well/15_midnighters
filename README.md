@@ -22,6 +22,34 @@ CLI encoding changing may be required for correct script running on Windows plat
 # Example of Script Launch
 
 ```
+(env) C:\projects\devman\15_midnighters>python seek_dev_nighters.py
+
+Retrieving midnight users from Devman.org database. Please wait.
+
+Done! Here is a list of devman owls:
+
+1. ВадимТатар
+2. ВадимТатар
+3. ВадимТатар
+4. SergeiKhrustalev
+5. SergeiKhrustalev
+6. lekcrg
+7. СергейИванов
+8. СашаБратчиков
+9. СашаБратчиков
+10. СашаБратчиков
+11. СашаБратчиков
+12. LizzaVeta
+13. АлексейЦыкунов
+14. lekcrg
+15. irinanizova0
+16. АлексейЦыкунов
+17. SergeiKhrustalev
+18. SergeiKhrustalev
+19. kazimir_de_solar
+20. sokolovav2016
+21. АлексейЦыкунов
+22. SergeiKhrustalev
 ```
 
 # Project Goals
