@@ -23,14 +23,14 @@ def load_database_records():
     return all_db_records
    
 def get_midnighters(database_records):
-    devman_owls = []
+    devman_owls = set()
     night_start, night_stop = 0,6
     for record in database_records:
         devman_server_timestamp = record.get('timestamp')
         local_tz = timezone(record.get('timezone'))
         local_time = datetime.fromtimestamp(devman_server_timestamp, tz = local_tz)
         if local_time.hour in range (night_start, night_stop + 1):
-            devman_owls.append(record.get('username'))
+            devman_owls.add(record.get('username'))
     return devman_owls
 
 if __name__ == '__main__':
