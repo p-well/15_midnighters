@@ -28,28 +28,17 @@ Retrieving midnight users from Devman.org database. Please wait.
 
 Done! Here is a list of devman owls:
 
-1. ВадимТатар
-2. ВадимТатар
-3. ВадимТатар
-4. SergeiKhrustalev
+1. irinanizova0
+2. LizzaVeta
+3. lekcrg
+4. AntonKupranis
 5. SergeiKhrustalev
-6. lekcrg
-7. СергейИванов
-8. СашаБратчиков
-9. СашаБратчиков
-10. СашаБратчиков
-11. СашаБратчиков
-12. LizzaVeta
-13. АлексейЦыкунов
-14. lekcrg
-15. irinanizova0
-16. АлексейЦыкунов
-17. SergeiKhrustalev
-18. SergeiKhrustalev
-19. kazimir_de_solar
-20. sokolovav2016
-21. АлексейЦыкунов
-22. SergeiKhrustalev
+6. АлексейЦыкунов
+7. СашаБратчиков
+8. ЕвгенийНечуй-Ветер
+9. ВадимТатар
+10. andrewnorilsk
+11. СергейИванов
 ```
 
 # Project Goals
