@@ -6,14 +6,14 @@ def load_database_records():
     all_db_records = []
     url = 'http://devman.org/api/challenges/solution_attempts/'
     try:
-        pages_count = requests.get(url).json().get('number_of_pages')
+        pages_count = requests.get(url, timeout = 3.05).json().get('number_of_pages')
     except requests.exceptions.RequestException as error:
         records_responce = None
         print(error)
     for page_number in range(1, pages_count + 1):
         payload = {'page':page_number}
         try:
-            records_responce = requests.get(url, params = payload).json().get('records')
+            records_responce = requests.get(url, params = payload, timeout = 3.05).json().get('records')
         except requests.exceptions.RequestException as error:
             records_responce = None
             print(error)
