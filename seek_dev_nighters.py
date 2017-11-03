@@ -5,21 +5,12 @@ from pytz import timezone
 def load_database_records():
     all_db_records = []
     url = 'http://devman.org/api/challenges/solution_attempts/'
-    try:
-        pages_count = requests.get(url, timeout = 3.05).json().get('number_of_pages')
-    except requests.exceptions.RequestException as error:
-        records_responce = None
-        print(error)
+    pages_count = requests.get(url, timeout = 3.05).json().get('number_of_pages')
     for page_number in range(1, pages_count + 1):
         payload = {'page':page_number}
-        try:
-            records_responce = requests.get(url, params = payload, timeout = 3.05).json().get('records')
-        except requests.exceptions.RequestException as error:
-            records_responce = None
-            print(error)
-        if records_responce is not None:
-            for user in records_responce:
-                all_db_records.append(user)
+        records_responce = requests.get(url, params = payload, timeout = 3.05).json().get('records')
+        for user in records_responce:
+            all_db_records.append(user)
     return all_db_records
    
 def get_midnighters(database_records):
@@ -41,4 +32,4 @@ if __name__ == '__main__':
         for user_count, user in enumerate(devman_owls, start = 1):
             print('{}. {}'.format(user_count, user))
     else:
-         print('Looks like Devman.org students prefer sleep at night!')
+        print('Looks like Devman.org students prefer sleep at night!')
