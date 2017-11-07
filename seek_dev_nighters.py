@@ -11,7 +11,7 @@ def load_database_records():
     pages_count = response.json().get('number_of_pages')
     for page_number in range(1, pages_count + 1):
         payload = {'page':page_number}
-        page_content = requests.get(url, params = payload, \
+        page_content = requests.get(url, params = payload,
                                     timeout = timeout_seconds)
         records = page_content.json().get('records')
         for user in records:
@@ -26,7 +26,7 @@ def get_midnighters(database_records):
     for record in database_records:
         devman_server_timestamp = record.get('timestamp')
         local_tz = timezone(record.get('timezone'))
-        local_time = datetime.fromtimestamp(devman_server_timestamp, \
+        local_time = datetime.fromtimestamp(devman_server_timestamp,
                                             tz = local_tz)
         if local_time.hour in range (night_start, night_stop + 1):
             devman_owls.add(record.get('username'))
