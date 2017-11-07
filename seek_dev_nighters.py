@@ -1,6 +1,7 @@
-import requests
 from datetime import datetime
 from pytz import timezone
+import requests
+
 
 def load_database_records():
     all_db_records = []
@@ -16,6 +17,7 @@ def load_database_records():
         for user in records:
             all_db_records.append(user) 
     return all_db_records
+
    
 def get_midnighters(database_records):
     devman_owls = set()
@@ -30,6 +32,7 @@ def get_midnighters(database_records):
             devman_owls.add(record.get('username'))
     return devman_owls
 
+
 if __name__ == '__main__':
     print('\nRetrieving midnight users from Devman.org database...\n') 
     devman_owls = get_midnighters(load_database_records())
@@ -38,4 +41,4 @@ if __name__ == '__main__':
         for user_count, user in enumerate(devman_owls, start = 1):
             print('{}. {}'.format(user_count, user))
     else:
-        print('Looks like Devman.org students prefer sleep at night!')
+        print('Looks like Devman students prefer sleep at night!')
