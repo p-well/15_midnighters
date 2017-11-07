@@ -8,8 +8,10 @@ def load_database_records():
     pages_count = requests.get(url, timeout = 3.05).json().get('number_of_pages')
     for page_number in range(1, pages_count + 1):
         payload = {'page':page_number}
-        records_responce = requests.get(url, params = payload, timeout = 3.05).json().get('records')
-        for user in records_responce:
+        timeout_seconds = 3.05
+        raw_response = requests.get(url, params = payload, timeout = timeout_seconds)
+        records = raw_response.json().get('records')
+        for user in records:
             all_db_records.append(user)
     return all_db_records
    
