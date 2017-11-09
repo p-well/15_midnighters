@@ -24,21 +24,18 @@ CLI encoding changing may be required for correct script running on Windows plat
 ```
 (env) C:\projects\devman\15_midnighters>python seek_dev_nighters.py
 
-Retrieving midnight users from Devman.org database. Please wait.
+Retrieving midnight users from Devman.org database...
 
 Done! Here is a list of devman owls:
 
-1. irinanizova0
-2. LizzaVeta
-3. lekcrg
-4. AntonKupranis
-5. SergeiKhrustalev
-6. АлексейЦыкунов
-7. СашаБратчиков
-8. ЕвгенийНечуй-Ветер
-9. ВадимТатар
-10. andrewnorilsk
-11. СергейИванов
+1. andrewnorilsk
+2. yuriykustov
+3. SergeiKhrustalev
+4. maruschin
+5. Seosvet
+6. id6250441
+7. kadantsev
+8. joj1337
 ```
 
 # Project Goals
