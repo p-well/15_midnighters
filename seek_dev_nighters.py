@@ -12,15 +12,15 @@ def load_database_records():
         payload = {'page': page_number}
         timeout_seconds = 3.05  # http://docs.python-requests.org/en/master/user/advanced/#timeouts
         response_content = requests.get(url, params=payload,
-                                    timeout=timeout_seconds).json()
+                                        timeout=timeout_seconds).json()
         pages_amount = response_content['number_of_pages']
         records_on_page = response_content['records']
         for record in records_on_page:
             all_db_records.append(record)
         page_number += 1
     return all_db_records
-     
-    
+
+
 def get_midnighters(database_records):
     devman_owls = set()
     night_stop_time = 6
