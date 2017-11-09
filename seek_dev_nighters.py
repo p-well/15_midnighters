@@ -5,31 +5,32 @@ import requests
 
 def load_database_records():
     all_db_records = []
-    url = 'http://devman.org/api/challenges/solution_attempts/'
-    timeout_seconds = 3.05
-    response = requests.get(url, timeout=timeout_seconds)
-    pages_count = response.json().get('number_of_pages')
-    for page_number in range(1, pages_count + 1):
+    pages_amount = 1
+    page_number = 1
+    while page_number <= pages_amount:
+        url = 'http://devman.org/api/challenges/solution_attempts/'
         payload = {'page': page_number}
-        page_content = requests.get(url, params=payload,
-                                    timeout=timeout_seconds)
-        records = page_content.json().get('records')
-        for user in records:
-            all_db_records.append(user)
+        timeout_seconds = 3.05  # http://docs.python-requests.org/en/master/user/advanced/#timeouts
+        response_content = requests.get(url, params=payload,
+                                    timeout=timeout_seconds).json()
+        pages_amount = response_content['number_of_pages']
+        records_on_page = response_content['records']
+        for record in records_on_page:
+            all_db_records.append(record)
+        page_number += 1
     return all_db_records
-
-
+     
+    
 def get_midnighters(database_records):
     devman_owls = set()
-    night_start = 0
-    night_stop = 6
+    night_stop_time = 6
     for record in database_records:
-        devman_server_timestamp = record.get('timestamp')
-        local_tz = timezone(record.get('timezone'))
+        devman_server_timestamp = record['timestamp']
+        local_tz = timezone(record['timezone'])
         local_time = datetime.fromtimestamp(devman_server_timestamp,
                                             tz=local_tz)
-        if local_time.hour in range(night_start, night_stop + 1):
-            devman_owls.add(record.get('username'))
+        if local_time.hour < night_stop_time:
+            devman_owls.add(record['username'])
     return devman_owls
 
 
