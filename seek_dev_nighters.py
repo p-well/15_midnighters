@@ -10,9 +10,7 @@ def load_database_records():
     while page_number <= pages_amount:
         url = 'http://devman.org/api/challenges/solution_attempts/'
         payload = {'page': page_number}
-        timeout_seconds = 3.05  # http://docs.python-requests.org/en/master/user/advanced/#timeouts
-        response_content = requests.get(url, params=payload,
-                                        timeout=timeout_seconds).json()
+        response_content = requests.get(url, params=payload).json()
         pages_amount = response_content['number_of_pages']
         records_on_page = response_content['records']
         for record in records_on_page:
